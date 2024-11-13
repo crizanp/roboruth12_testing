@@ -6,7 +6,7 @@ const Story = () => {
   const [isInView, setIsInView] = useState(false);
   const contractAddressRef = useRef(null);
 
-  const contractAddress = "GJAFwWjJ3vnTsrQVabjBVK2TYB1YtRCQXRDFdgUnpump";
+  const contractAddress = "ROBORUTH12PUMP_Coming_Soon";
 
   useEffect(() => {
     const observer = new IntersectionObserver(
