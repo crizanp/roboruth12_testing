@@ -8,6 +8,7 @@ import Story from './components/Story';
 import MemeGallery from './components/MemeGallery';
 import Footer from './components/Footer';
 import Loading from './components/Loading';
+import UserPostedMeme from './components/UserPostedMeme';
 
 export default function Home() {
   const [loadingComplete, setLoadingComplete] = useState(false);
@@ -25,6 +26,7 @@ export default function Home() {
           <Hero />
           <Story />
           <MemeGallery />
+          {/* <UserPostedMeme/> */}
           <Footer />
         </>
       )}

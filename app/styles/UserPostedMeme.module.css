@@ -1,0 +1,267 @@
+/* Header Container */
+.headerContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    justify-content: center;
+    gap: 8px; /* Add spacing between the text and the icon */
+    position: relative;
+}
+
+.infoIcon {
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center; /* Center the icon vertically */
+    margin-left: 8px; /* Adjust as needed for spacing */
+}
+
+  
+  .tooltip {
+    position: absolute;
+    top: 30px;
+    left: -80px;
+    background: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    padding: 10px 15px; /* Increased padding for a bit more space */
+    border-radius: 5px;
+    font-size: 0.85rem;
+    max-width: 300px; /* Increased max-width */
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    line-height: 1.3;
+  }
+  
+  @media (max-width: 768px) {
+    .tooltip {
+      font-size: 0.7rem;
+      max-width: 220px; /* Adjust width for mobile screens */
+      left: -20px;
+      top: 25px;
+      padding: 6px 10px;
+    }
+  }
+  
+  
+  /* Meme Grid */
+  .memeGrid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+  }
+  
+  @media (max-width: 1024px) {
+    .memeGrid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .memeGrid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  /* Meme Card */
+  .memeCard {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  .memeCard:hover {
+    transform: scale(1.05);
+  }
+  
+  .memeCard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  /* Overlay for description and button */
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .memeCard:hover .overlay {
+    opacity: 1;
+  }
+  
+  .exploreButton {
+    background-color: #00ffcc;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .exploreButton:hover {
+    background-color: #ffcc00;
+    transform: scale(1.1);
+  }
+  
+  /* Modal Overlay and Content */
+  .modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modalContent {
+    background-color: #1a1a1a;
+    border: 2px solid #00ffcc;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    text-align: center;
+    position: relative;
+  }
+  
+  /* Close Button */
+  .closeButton {
+    background-color: #ff00ff;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  .closeButton:hover {
+    background-color: #ff0055;
+    transform: scale(1.1);
+  }
+  
+  /* Laugh, Clap, Downvote Effect Overlays */
+  .laughEffectOverlay,
+  .clapEffectOverlay,
+  .downvoteEffectOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    pointer-events: none;
+  }
+  
+  .laughEffectOverlay {
+    background-color: rgba(255, 204, 0, 0.2);
+    animation: laughVibe 0.4s ease-in-out;
+  }
+  
+  .clapEffectOverlay {
+    background-color: rgba(0, 255, 204, 0.2);
+    animation: clapVibe 0.4s ease-in-out;
+  }
+  
+  .downvoteEffectOverlay {
+    background-color: rgba(255, 0, 85, 0.2);
+    animation: downvoteVibe 0.4s ease-in-out;
+  }
+  
+  @keyframes laughVibe {
+    0%, 100% { opacity: 0; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+  }
+  
+  @keyframes clapVibe {
+    0%, 100% { opacity: 0; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.05); }
+  }
+  
+  @keyframes downvoteVibe {
+    0%, 100% { opacity: 0; transform: scale(1); }
+    50% { opacity: 1; transform: scale(0.95); }
+  }
+  /* Base styling for vote buttons */
+.voteButton {
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    color: #ffffff;
+    margin: 5px;
+    width: 100px;
+    text-align: center;
+}
+
+/* Laugh Button */
+.laughButton {
+    background-color: #FFD700; /* Gold for laugh */
+}
+
+.laughButton:hover {
+    background-color: #FFEB3B;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 235, 59, 0.5);
+}
+
+/* Clap/Like Button */
+.clapButton {
+    background-color: #4CAF50; /* Green for like */
+}
+
+.clapButton:hover {
+    background-color: #66BB6A;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(102, 187, 106, 0.5);
+}
+
+/* Downvote Button */
+.downvoteButton {
+    background-color: #FF5722; /* Red for dislike */
+}
+
+.downvoteButton:hover {
+    background-color: #FF7043;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 112, 67, 0.5);
+}
+
+/* Active Animation */
+.voteButton:active {
+    transform: scale(0.95);
+}
+/* Disabled button styling */
+.disabledButton {
+    background-color: #555555; /* Gray out */
+    color: #a0a0a0; /* Lighter gray text */
+    cursor: not-allowed; /* Change cursor */
+    transform: none; /* Disable transform effects */
+    box-shadow: none; /* Remove hover shadow */
+}
+
+.disabledButton:hover {
+    background-color: #555555;
+    transform: none;
+}
