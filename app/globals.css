@@ -2,20 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+/* Setting the font to Courier New for monospace look */
+body, .font-mono {
+  font-family: 'Courier New', Courier, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Darker Neon Background Animation */
+.neon-background {
+  background: linear-gradient(45deg, #0b08b9, #030236, #01052c, #5900ff);
+  background-size: 300% 300%;
+  animation: neonBackgroundAnimation 4s ease infinite;
+}
+
+/* Keyframe for more dynamic background animation */
+@keyframes neonBackgroundAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Neon Text Shadow Effect - Darker and More Subtle */
+.neon-text {
+  color: #ffffff;
+  text-shadow: 0 0 8px #7200a1, 0 0 16px #7200a1, 0 0 24px #7200a1;
+}
+
+.neon-text-yellow {
+  color: #ffffff;
+  text-shadow: 0 0 10px #d4af37, 0 0 20px #d4af37, 0 0 30px #d4af37;
+}
+
+.neon-text-green {
+  color: #00ffcc;
+  text-shadow: 0 0 10px #008b8b, 0 0 20px #008b8b, 0 0 30px #008b8b;
+}
+
+/* Button Neon Effect - Darker Tones */
+.neon-button {
+  box-shadow: 0 0 10px rgba(0, 200, 170, 0.6), 0 0 20px rgba(0, 200, 170, 0.4), 0 0 30px rgba(0, 200, 170, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.neon-button:hover {
+  box-shadow: 0 0 20px rgba(0, 200, 170, 0.8), 0 0 30px rgba(0, 200, 170, 0.6), 0 0 40px rgba(0, 200, 170, 0.5);
+}
+
+/* Pulse Animation - Brighter Glow */
+@keyframes pulseAnimation {
+  0% {
+    text-shadow: 0 0 8px #ff00ff, 0 0 16px #ff00ff, 0 0 24px #ff00ff;
+  }
+  50% {
+    text-shadow: 0 0 20px #ff33ff, 0 0 40px #ff33ff, 0 0 60px #ff33ff;
+  }
+  100% {
+    text-shadow: 0 0 8px #ff00ff, 0 0 16px #ff00ff, 0 0 24px #ff00ff;
+  }
+}
+
+/* Apply pulse animation */
+.animate-pulse {
+  animation: pulseAnimation 1.5s infinite alternate;
+}
+
+/* Responsive Logo Text */
+@media (max-width: 640px) {
+  .font-mono .neon-text {
+    font-size: 1rem;
+  }
 }

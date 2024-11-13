@@ -1,0 +1,82 @@
+/* styles/MemeGallery.module.css */
+
+/* Meme Card */
+.memeCard {
+    position: relative;
+    border: 4px solid #00ffcc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3), 0 0 30px rgba(0, 255, 255, 0.5);
+    transition: transform 0.3s ease;
+  }
+  
+  .memeCard:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Neon Text Effect for Title */
+  .neon-text {
+    color: #ffcc00;
+    text-shadow: 0 0 5px #ffcc00, 0 0 10px #ffcc00, 0 0 15px #ffcc00;
+  }
+  
+  /* Overlay for Text and Button on Hover */
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  .bg-image{
+    background-image: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Fsearch%3Fk%3Drobotics&psig=AOvVaw0EzBeXlgMT73cYGxzRoemJ&ust=1731561992031000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOCQlqDJ2IkDFQAAAAAdAAAAABA_");
+  }
+  .memeCard:hover .overlay {
+    opacity: 1;
+  }
+  
+  /* Vote Button */
+  .voteButton {
+    background-color: #ff00ff;
+    color: #000;
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+  }
+  
+  .voteButton:hover {
+    background-color: #00ffcc;
+    transform: scale(1.1);
+  }
+  
+  /* Custom Arrow Styles */
+  .arrow {
+    font-size: 30px;
+    color: #ff00ff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  .arrow:hover {
+    color: #00ffcc;
+  }
+  
+  .nextArrow {
+    right: -20px;
+  }
+  
+  .prevArrow {
+    left: -20px;
+  }
+  

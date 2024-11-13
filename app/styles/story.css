@@ -1,0 +1,225 @@
+/* Global Container */
+.story-container {
+    padding: 2rem;
+    background-color: #0d1117;
+    color: #f9fafb;
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                      radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* ASCII Art */
+.ascii-art {
+    color: #10b981;
+    font-size: clamp(0.7rem, 1.5vw, 1.2rem); /* Responsive font size */
+    white-space: pre;
+    line-height: 1.2;
+    overflow-x: auto;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 0 1rem;
+}
+
+/* Title */
+.title {
+    font-size: 1.4rem;
+    color: #58a6ff;
+    margin-top: 1rem;
+    text-shadow: 0 0 5px rgba(88, 166, 255, 0.6);
+    border-bottom: 1px solid #21262d;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Story Sections */
+.story-section {
+    margin-top: 1.5rem;
+    max-width: 600px;
+    text-align: justify;
+}
+
+.character-intro {
+    font-size: 1.4rem;
+    color: #58a6ff;
+    font-weight: bold;
+    text-shadow: 0 0 4px rgba(88, 166, 255, 0.4);
+    margin-bottom: 1rem;
+}
+
+.story-text {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #d1d5db;
+    padding: 0.5rem 0;
+}
+
+.highlight {
+    color: #ff7b72;
+    font-weight: bold;
+    text-shadow: 0 0 3px rgba(255, 123, 114, 0.5);
+}
+
+/* Contract Address Section */
+.contract-address {
+    margin-top: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+    text-align: center;
+    background-color: rgba(13, 17, 23, 0.8);
+    border: 1px solid #21262d;
+    border-radius: 8px;
+    max-width: 80%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ensure content does not overflow */
+    word-wrap: break-word; /* Break long words to fit inside */
+}
+
+.contract-address:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.6);
+}
+
+.address-content {
+    font-size: 1.2rem;
+    color: #10b981;
+    display: inline-block;
+    position: relative;
+    word-break: break-all; /* Break the text if it overflows */
+    white-space: normal; /* Allow wrapping of the address */
+}
+
+.label {
+    color: #ff7b72;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.typewriter {
+    color: #58a6ff;
+    font-weight: bold;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    border-right: 2px solid rgba(88, 166, 255, 0.75);
+    white-space: nowrap;
+    animation: typing 2s steps(20, end), blink 0.7s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Copied Message */
+.copy-message {
+    font-size: 0.9rem;
+    color: #ff7b72;
+    margin-top: 0.5rem;
+    text-shadow: 0 0 5px rgba(255, 123, 114, 0.7);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .story-container {
+        padding: 1.5rem;
+        background-size: 30px 30px;
+    }
+
+    .ascii-art {
+        font-size: 0.4rem;
+        line-height: 1;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 1.2rem;
+    }
+
+    .character-intro {
+        font-size: 1.2rem;
+    }
+
+    .story-text {
+        font-size: 0.9rem;
+    }
+
+    .contract-address {
+        max-width: 100%;
+        padding: 0.5rem;
+        margin-top: 1rem;
+        box-shadow: 0 0 10px rgba(16, 185, 129, 0.4);
+        font-size: 1rem;
+    }
+
+    .address-content {
+        font-size: 0.9rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .label {
+    }
+
+    .typewriter {
+        font-size: 0.7rem;
+        border-right: 1px solid rgba(88, 166, 255, 0.75);
+    }
+    .copy-message {
+        font-size: 0.8rem;
+    }
+}
+
+/* Prevent horizontal overflow */
+body {
+    overflow-x: hidden;
+}
+
+.address-content,
+.typewriter {
+    vertical-align: middle; /* Ensure alignment with other elements */
+    line-height: 1; /* Match line height if it’s different */
+    display: inline; /* Ensure consistent display type */
+}
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.centered-image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    padding: 10px;
+    animation: glow 1.5s infinite alternate;
+}
+
+/* Softer, purple glowing border */
+@keyframes glow {
+    from {
+        box-shadow: 0 0 3px #9b59b6, 0 0 6px #9b59b6, 0 0 9px #9b59b6,
+            0 0 12px #9b59b6, 0 0 15px #9b59b6;
+    }
+    to {
+        box-shadow: 0 0 6px #9b59b6, 0 0 12px #9b59b6, 0 0 18px #9b59b6,
+            0 0 24px #9b59b6, 0 0 30px #9b59b6;
+    }
+}
