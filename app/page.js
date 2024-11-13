@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { useState } from 'react';
 import SEO from './components/SEO';
@@ -15,13 +15,16 @@ export default function Home() {
 
   return (
     <>
-      {/** Show the Loading screen initially **/}
+      {/* Loading screen */}
       {!loadingComplete && <Loading onFinish={() => setLoadingComplete(true)} />}
 
-      {/** Once loading is complete, display the main content **/}
+      {/* Main content with enhanced SEO */}
       {loadingComplete && (
         <>
-          <SEO title="RoboRuth 12: The AI Meme Revolution" description="Join RoboRuth 12 in her cosmic journey across the blockchain universe!" />
+          <SEO 
+            title="RoboRuth 12: The AI Meme Revolution - Home" 
+            description="Discover the AI-powered meme journey with RoboRuth 12, exploring memes and more across the blockchain universe."
+          />
           <Navbar />
           <Hero />
           <Story />
