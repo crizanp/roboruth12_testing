@@ -21,15 +21,15 @@ const Navbar = () => {
       {/* Social Icons and Additional Links */}
       <div className="flex items-center space-x-4 md:space-x-6">
         {/* Social Media Icons with Hover Effects */}
-        <a href="https://telegram.com" target="_blank" rel="noopener noreferrer">
-          <FaTelegram size={24} className="hover:text-yellow-300 transition-transform transform hover:scale-110 neon-text-green" />
+        <a href="https://t.me/RoboRuth12" target="_blank" rel="noopener noreferrer">
+          <FaTelegram size={24} className="hover:text-purple-300 transition-transform transform hover:scale-110 neon-text-green" />
         </a>
-        <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-          <FaTwitter size={24} className="hover:text-yellow-300 transition-transform transform hover:scale-110 neon-text-green" />
+        <a href="https://x.com/RoboRuth12" target="_blank" rel="noopener noreferrer">
+          <FaTwitter size={24} className="hover:text-purple-300 transition-transform transform hover:scale-110 neon-text-green" />
         </a>
-        <a href="https://discord.com" target="_blank" rel="noopener noreferrer">
+        {/* <a href="https://discord.com" target="_blank" rel="noopener noreferrer">
           <FaDiscord size={24} className="hover:text-yellow-300 transition-transform transform hover:scale-110 neon-text-green" />
-        </a>
+        </a> */}
 
         {/* Merch Link Button */}
         <a href="#merch">
