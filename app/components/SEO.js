@@ -4,20 +4,27 @@ import defaultSEO from './seoConfig'; // Adjust path based on structure
 
 const SEO = ({ title, description, url, image }) => (
   <Head>
+    {/* Standard Meta Tags */}
     <title>{title || defaultSEO.title}</title>
     <meta name="description" content={description || defaultSEO.description} />
     <meta name="keywords" content={defaultSEO.keywords.join(", ")} />
-    <meta property="og:title" content={title || defaultSEO.title} />
-    <meta property="og:description" content={description || defaultSEO.description} />
-    <meta property="og:url" content={url || defaultSEO.url} />
-    <meta property="og:image" content={image || defaultSEO.image} />
+    <meta name="robots" content="index, follow" />
+
+    {/* Open Graph Meta Tags for social media sharing */}
+    <meta property="og:title" content={title || defaultSEO.og.title} />
+    <meta property="og:description" content={description || defaultSEO.og.description} />
+    <meta property="og:type" content={defaultSEO.og.type} />
+    <meta property="og:url" content={url || defaultSEO.og.url} />
+    <meta property="og:image" content={image || defaultSEO.og.image} />
+    <meta property="og:site_name" content={defaultSEO.og.site_name} />
+
+    {/* Twitter Card Data */}
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title || defaultSEO.title} />
     <meta name="twitter:description" content={description || defaultSEO.description} />
     <meta name="twitter:image" content={image || defaultSEO.image} />
-    <meta name="robots" content="index, follow" />
-    
-    {/* JSON-LD Schema with enhanced character details */}
+
+    {/* JSON-LD Structured Data */}
     <script type="application/ld+json">
       {JSON.stringify({
         "@context": "https://schema.org",
@@ -35,6 +42,7 @@ const SEO = ({ title, description, url, image }) => (
       })}
     </script>
 </Head>
+
 
 );
 
